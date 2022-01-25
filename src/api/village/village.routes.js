@@ -11,8 +11,7 @@ const {
 VillageRoutes.post(
   "/",
   [isAuth],
-  upload.single("image"),
-  upload.single("symbol"),
+  upload.fields([{ name: "image" }, { name: "symbol" }]),
   postNewVillage
 );
 VillageRoutes.get("/:id", getVillage);

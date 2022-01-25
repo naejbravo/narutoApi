@@ -4,11 +4,12 @@ const { deleteFile } = require("../../utils/middleware/deleteFile");
 
 const postNewVillage = async (req, res, next) => {
   console.log("sacamos reqbody", JSON.parse(JSON.stringify(req.body)));
+  console.log("sacamos datos de files", req.files);
   try {
     const newVillage = new Village(req.body);
-    if (req.file) {
-      newVillage.image = req.file.path;
-      newVillage.symbol = req.file.path;
+    if (req.files) {
+      newVillage.image = req.files.image[0].path;
+      newVillage.symbol = req.files.symbol[0].path;
     }
     console.log(newVillage);
     const villageDB = await newVillage.save();
