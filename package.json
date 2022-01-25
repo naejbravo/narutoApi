@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "character-seed": "node src/seeds/character.seed.js",
+    "village-seed": "node src/seeds/village.seed.js"
   },
   "keywords": [],
   "author": "",
